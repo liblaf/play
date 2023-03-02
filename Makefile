@@ -2,6 +2,7 @@ BIN    := $(HOME)/.local/bin
 DIST   := $(CURDIR)/dist
 NAME   := thu-learn-downloader
 
+$(info $(SHELL))
 OS   != echo $(RUNNER_OS)   | tr '[:upper:]' '[:lower:]'
 ARCH != echo $(RUNNER_ARCH) | tr '[:upper:]' '[:lower:]'
 ifeq ($(OS), windows)
