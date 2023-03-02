@@ -13,7 +13,7 @@ endif
 TARGET := $(DIST)/$(NAME)$(EXE)
 
 rename:
-	echo $(OS) $(ARCH)
+	echo $(RUNNER_OS) $(RUNNER_ARCH) $(OS) $(ARCH)
 ifneq ($(and $(OS), $(ARCH)), )
 	echo $(DIST)/$(NAME)-$(OS)-$(ARCH)$(EXE)
 endif
