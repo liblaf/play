@@ -16,7 +16,7 @@ jobs:
         continue-on-error: true
       - run: rm --help
         continue-on-error: true
-      - run: make remove
+      - run: make
         continue-on-error: true
       - run: install --help
         continue-on-error: true
