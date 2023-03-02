@@ -12,6 +12,12 @@ jobs:
         env:
           RUNNER_OS: ${{ runner.os }}
           RUNNER_ARCH: ${{ runner.arch }}
+      - run: echo ${RUNNER_OS} | tr '[:upper:]' '[:lower:]'
+        env:
+          RUNNER_OS: ${{ runner.os }}
+      - run: echo ${RUNNER_ARCH} | tr '[:upper:]' '[:lower:]'
+        env:
+          RUNNER_ARCH: ${{ runner.arch }}
       # - if: runner.os == 'macOS'
       #   run: |
       #     brew install coreutils
