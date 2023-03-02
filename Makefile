@@ -1,16 +1,22 @@
-ifneq ($(shell which go),)
-	ARCH != go env GOARCH
-	EXE  != go env GOEXE
-	OS   != go env GOOS
+BIN    := $(HOME)/.local/bin
+DIST   := $(CURDIR)/dist
+NAME   := thu-learn-downloader
+
+OS   != echo $(RUNNER_OS)   | tr '[:upper:]' '[:lower:]'
+ARCH != echo $(RUNNER_ARCH) | tr '[:upper:]' '[:lower:]'
+ifeq ($(OS), windows)
+	EXE := .exe
 else
-	ARCH != echo $(ARCH) | tr '[:upper:]' '[:lower:]'
-	EXE  != echo $(EXE)  | tr '[:upper:]' '[:lower:]'
-	OS   != echo $(OS)   | tr '[:upper:]' '[:lower:]'
+	EXE :=
 endif
 
-$(info $(ARCH))
-$(info $(EXE))
-$(info $(OS))
+TARGET := $(DIST)/$(NAME)$(EXE)
 
+.PHONY: build
 build:
-	echo
+	@ echo
+
+rename: build
+ifneq ($(and $(OS), $(ARCH)), )
+	echo $(DIST)/$(NAME)-$(OS)-$(ARCH)$(EXE)
+endif
