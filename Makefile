@@ -12,7 +12,7 @@ endif
 
 TARGET := $(DIST)/$(NAME)$(EXE)
 
-rename: build
+rename:
 ifneq ($(and $(OS), $(ARCH)), )
 	echo $(DIST)/$(NAME)-$(OS)-$(ARCH)$(EXE)
 endif
