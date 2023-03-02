@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: uname --help
+        continue-on-error: true
+      - run: rm --help
+        continue-on-error: true
+      - run: make remove
+        continue-on-error: true
+      - run: install --help
+        continue-on-error: true
+      - run: uname --machine
+        continue-on-error: true
+      - run: uname --kernel-release
+        continue-on-error: true
+      - run: uname --kernel-release | tr '[:upper:]' '[:lower:]'
+        continue-on-error: true
