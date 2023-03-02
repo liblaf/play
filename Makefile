@@ -12,10 +12,6 @@ endif
 
 TARGET := $(DIST)/$(NAME)$(EXE)
 
-.PHONY: build
-build:
-	@ echo
-
 rename: build
 ifneq ($(and $(OS), $(ARCH)), )
 	echo $(DIST)/$(NAME)-$(OS)-$(ARCH)$(EXE)

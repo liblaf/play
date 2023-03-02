@@ -8,28 +8,29 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-      - if: runner.os == 'macOS'
-        run: |
-          brew install coreutils
-          echo "PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}" >> "${GITHUB_ENV}"
-      - run: uname --help
-        continue-on-error: true
-      - run: rm --help
-        continue-on-error: true
       - run: make
-        continue-on-error: true
-      - run: install --help
-        continue-on-error: true
-      - run: uname --machine
-        continue-on-error: true
-      - run: uname --kernel-name
-        continue-on-error: true
-      - run: uname --kernel-name | tr '[:upper:]' '[:lower:]'
-        continue-on-error: true
-      - run: uname
-        continue-on-error: true
-      - run: uname -o
-        continue-on-error: false
+      # - if: runner.os == 'macOS'
+      #   run: |
+      #     brew install coreutils
+      #     echo "PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}" >> "${GITHUB_ENV}"
+      # - run: uname --help
+      #   continue-on-error: true
+      # - run: rm --help
+      #   continue-on-error: true
+      # - run: make
+      #   continue-on-error: true
+      # - run: install --help
+      #   continue-on-error: true
+      # - run: uname --machine
+      #   continue-on-error: true
+      # - run: uname --kernel-name
+      #   continue-on-error: true
+      # - run: uname --kernel-name | tr '[:upper:]' '[:lower:]'
+      #   continue-on-error: true
+      # - run: uname
+      #   continue-on-error: true
+      # - run: uname -o
+      #   continue-on-error: false
     strategy:
       matrix:
         os:
