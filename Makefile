@@ -1,6 +1,7 @@
 BIN    := $(HOME)/.local/bin
 DIST   := $(CURDIR)/dist
 NAME   := thu-learn-downloader
+SHELL  := /bin/bash
 
 $(info $(SHELL))
 OS   != echo $(RUNNER_OS)   | tr '[:upper:]' '[:lower:]'
