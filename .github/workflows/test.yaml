@@ -26,6 +26,10 @@ jobs:
         continue-on-error: true
       - run: uname --kernel-name | tr '[:upper:]' '[:lower:]'
         continue-on-error: true
+      - run: uname
+        continue-on-error: true
+      - run: uname -o
+        continue-on-error: false
     strategy:
       matrix:
         os:
