@@ -7,6 +7,7 @@ jobs:
   test:
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v3
       - if: runner.os == 'macOS'
         run: |
           brew install coreutils
