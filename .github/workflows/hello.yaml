@@ -9,6 +9,8 @@ jobs:
     steps:
       - run: make --help
       - run: make --version
+      - run: install --help
+      - run: mkdir --help
     strategy:
       matrix:
         os:
